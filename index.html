@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet/less" type="text/css" href="styles.less" />
+    <title>Frontend Mentor | Pod request access landing page</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <img src="./assets/desktop/logo.svg" alt="logo" />
+      </header>
+      <main>
+        <h1>Publish your podcasts <em>everywhere.</em></h1>
+        <p>
+          Upload your audio to Pod with a single click. We’ll then distribute
+          your podcast to Spotify, Apple Podcasts, Google Podcasts, Pocket Casts
+          and more!
+        </p>
+        <section class="platforms">
+          <img src="./assets/desktop/spotify.svg" alt="spotify logo" />
+          <img
+            src="./assets/desktop/apple-podcast.svg"
+            alt="apple podcast logo"
+          />
+          <img
+            src="./assets/desktop/google-podcasts.svg"
+            alt="google podcasts logo"
+          />
+          <img
+            src="./assets/desktop/pocket-casts.svg"
+            alt="google podcasts logo"
+          />
+        </section>
+        <form novalidate>
+          <div class="input">
+            <input placeholder="Email address" type="email" />
+            <span class="error">Oops! Please check your email</span>
+          </div>
+          <button>Request access</button>
+        </form>
+      </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/less"></script>
+    <script>
+      const form = document.querySelector('form');
+      const input = document.querySelector('input');
+      const error = document.querySelector('.error');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (input.value === '' || !input.validity.valid) {
+          error.style.display = 'block';
+          return;
+        }
+        error.style.display = 'none';
+      });
+    </script>
+  </body>
+</html>
